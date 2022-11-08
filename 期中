@@ -16,10 +16,32 @@
 # 問答題
  
 - 簡述作業系統的功能
+  - (作業系統)負責協調電腦中的資源和活動，管理硬體與軟體  
+      間的交流
 - 簡述開機程序（boot process） 
+  - 1.電源供應器接收到電力，傳送給各電路
+    2.CPU開始執行bootstrap程式
+    3.Bootstrap執行一連串測試，檢查各元件及每個相連的裝
+      置以及設定值
+    4.測試成功後作業系統被載入到RAM中包括核心(作業系統
+      的中心部分)負責管理記憶體、執行程式、指派資源
+    5.載入系統組態>驗證使用者>啟動應用程式
+
 - OSI 模型與TCP/IP protocal suite
   - OSI有七層?簡述其功能
-  - 底下網路設備運作在哪一層? Hub, switch, router, L4-switch, proxy
+    - 第七層︰應用層（Application）     負責提供各種服務給應用程式
+    - 第六層︰展示層（Presentation ）   可轉換表達方式
+    - 第五層︰會議層（Session）         控制使用者何時可以傳送或接收資料，即達到所謂的同步交談的功能。
+    - 第四層︰傳輸層（Transport）       傳輸層服務通過傳輸層協定的編程介面傳遞給應用行程 
+    - 第三層︰網路層（Network）         提供路由和尋址的功能
+    - 第二層︰資料連結層（Data Link）   在兩個網路實體之間提供資料鏈路連接的建立、維持和釋放管理
+    - 第一層︰實體層（Physical ）       網路的實體層面確保原始的資料可在各種物理媒體上傳輸。
+  - 底下網路設備運作在哪一層? 
+    - Hub,       第一層︰實體層
+    - switch,    第二層︰資料連結層
+    - router,    第三層︰網路層
+    - L4-switch, 第四層︰傳輸層
+    - proxy      第七層︰應用層
   - TCP/IP有那些層?寫出與OSI七層模型的對應!
    
     - 第七層︰應用層（Application）    ｜\
@@ -31,49 +53,69 @@
     - 第一層︰實體層（Physical ）       ｜---Network 網路
   - 簡述底下應用層協定(英文全名與簡單功能說明):
     - HTTP vs HTTPs
-      - HyperText Transfer Protocol 超文本傳輸協定
+      - HyperText Transfer Protocol 超文本傳輸協定 HTTP
       - HTTP是一種用於分佈式、協作式和`超媒體訊息`系統的`應用層`協定
       - HTTP是`全球資訊網`的數據通信的基礎。
+      - HTTP可以在任何網際網路協定或其他網路上實作
+      - 在TCP/IP協定族使用TCP作為其傳輸層。
       VS
-      - HyperText Transfer Protocol Secure 超級文字傳輸安全協定
+      - HyperText Transfer Protocol Secure 超級文字傳輸安全協定 HTTPS
       - HTTPS經由HTTP進行通訊，但利用SSL/TLS來加密封包
       - HTTPS開發的主要目的，是提供對網站伺服器的身分認證，保護交換資料的隱私與完整性
-      
+      - HTTPS的主要作用是在不安全的網路上建立一個安全信道
+      - 可在使用適當的加密套件和伺服器憑證可被驗證且可被信任時，
     - DNS vs DNSsec
-      - Domain Name System 域名系統
+      - Domain Name System 域名系統 DNS
+      - 是網際網路的一項服務
       - DNS使用TCP和UDP
       - 它作為將域名和IP位址相互對映的一個分散式資料庫
+      - 能夠使人更方便地存取網際網路
       VS
-      - Domain Name System Security Extensions 域名系統安全擴充
+      - Domain Name System Security Extensions 域名系統安全擴充 DNSsec
       - 是Internet工程任務組
       - 確保由域名系統 （DNS）中提供的關於網際網路協定
-      
+      - 它是對DNS提供給DNS客戶端（解析器）的DNS資料來源進行認證
+      - 不存在性和校驗資料完整性驗證，但不提供機密性和可用性
     - telnet vs ssh
-      - Telnet是一種應用層協議
+      - Telnet是一種應用層協議 telnet
       - 提供雙向、以文字字串為主的命令列介面互動功能
-      - 屬於TCP/IP協議族的其中之一
+      - 使用於網際網路及區域網中
+      - 常用於伺服器的遠端控制
+      - 使用虛擬終端機的形式
       VS
-      - Secure Shell Protocol，簡稱SSH
+      - Secure Shell Protocol，安全外殼協定 SSH
       - 是一種加密的網路傳輸協定
+      - 可在不安全的網路中為網路服務提供安全的傳輸環境
       - SSH通過在網路中建立安全隧道來實現SSH客戶端與伺服器之間的連接
-      
+      - SSH最常見的用途是遠端登入系統
     - ftp vs sftp
-      - File Transfer Protocol 檔案傳輸協定
+      - File Transfer Protocol 檔案傳輸協定 FTP
       - 客戶端和伺服器之間進行檔案傳輸的應用層協定
       - 前者由FTP提供，後者由如NFS等應用系統提供
+      - 能操作任何類型的檔案而不需要進一步處理
+      - FTP有著極高的延時
       VS 
       - SSH檔案傳輸協定 又稱為sftp
       - 是一數據流連線，提供檔案存取
       - 傳輸和管理功能的網路傳輸協定
+      - 這個協定是假設執行在安全信道
+      - 它能夠使用在許多不同的應用程式
     - smtp VS pop3
       - Simple Mail Transfer Protocol 簡單郵件傳輸協定
+      - SMTP是一個相對簡單的基於文字的協定
       - 可用在傳送和接收電子郵件的資訊
       - 但SMTP通常用作傳送電子郵件資訊，而不是接收。
+      - SMTP是一個「推播」協定
       VS
-      - 最新版本為POP3 Post Office Protocol - Version 3 郵局協定
+      - 最新版本為 Post Office Protocol - Version 3 郵局協定 POP3
+      - 郵件傳送到伺服器上，電子郵件客戶端呼叫郵件客戶機程式以連接伺服器
       - 是TCP/IP協定族中的一員
       - 提供了SSL加密的POP3協定被稱為POP3S。
+      - POP3郵件伺服器大都可以「只下載郵件，伺服器端並不刪除」
     - SNMP 
+      - 簡單網路管理協定（SNMP，Simple Network Management Protocol） SNMP
+      - Internet協定族的一部分
+      - 該協定能夠支援網路管理系統
   - 簡述底下傳輸層協定(英文全名與簡單功能說明):
     - TCP vs UDP
       - Transmission Control Protocol傳輸控制協定
@@ -84,7 +126,11 @@
     - reliable(可靠的) vs unreliable(不可靠的) 
 
     - TCP three-way handshaking(三項交握)
+      - Three-way Handshake
+      - TCP 是一種 連接導向 (connection-oriented) 的通訊協定，其實就是 三次訊息的交換。
     - TCP syn flood attack
+      - SYN 洪水攻擊 是一種阻斷服務 (DDoS) 攻擊
+      - 透過消耗所有可用的伺服器資源，使伺服器無法用於合法流量。
   - 簡述底下網路層協定(英文全名與簡單功能說明): 
     - IP
       - Internet Protocol 網際協定
