@@ -133,10 +133,10 @@
       - 透過消耗所有可用的伺服器資源，使伺服器無法用於合法流量。
   - 簡述底下網路層協定(英文全名與簡單功能說明): 
     - IP
-      - Internet Protocol 網際協定
+      - Internet Protocol 網際協定 IP
       - 任務僅僅是根據源主機和目的主機的位址來傳送資料
     - ICMP 
-      - Internet Control Message Protocol 網際網路控制訊息協定
+      - Internet Control Message Protocol 網際網路控制訊息協定 ICMP
       - 提供可能發生在通訊環境中的各種問題回饋
  
 
