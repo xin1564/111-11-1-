@@ -27,8 +27,8 @@
     - 第五層︰會議層（Session）        ｜/
     - 第四層︰傳輸層（Transport）           ----Transport 主機傳輸
     - 第三層︰網路層（Network）             ----Network 網路
-    - 第二層︰資料連結層（Data Link）   ｜---interface 
-    - 第一層︰實體層（Physical ）       ｜---Network 網路介面
+    - 第二層︰資料連結層（Data Link）   ｜---interface 介面
+    - 第一層︰實體層（Physical ）       ｜---Network 網路
   - 簡述底下應用層協定(英文全名與簡單功能說明):
     - HTTP vs HTTPs
       - HyperText Transfer Protocol 超文本傳輸協定
